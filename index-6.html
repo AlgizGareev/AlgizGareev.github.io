@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>(Pro) Responsive Template</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <!-- Mobile Specific Metas  ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="css/jcarousel_skin.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="preloader/css/preloader.css"  />
+        <link rel="stylesheet" type="text/css" href="prettyPhoto/css/prettyPhoto.css" />
+        <link rel="stylesheet" type="text/css" href="css/menusm.css" />
+        <link type="text/css" href="ui_totop/css/ui.totop.css" rel="stylesheet" />
+        <link type="text/css" href="twitter_tweet/jquery.tweet.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+        <!-- DC Dream Accordion CSS -->
+        <link rel="stylesheet" type="text/css" href="js/dream-accordion/css/dream-accordion.css" />
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <!-- requires easing library -->
+        <script type="text/javascript" src="js/jquery.easing.js"></script>
+        <script type="text/javascript" src="js/dream-accordion/js/froogaloop.min.js"></script>
+        <script type="text/javascript" src="js/dream-accordion/js/jquery.transform-0.9.3.min.js" ></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/dream-accordion/js/jquery.getimagedata.min.js" ></script>
+        <script type="text/javascript" src="js/dream-accordion/js/dream-accordion.js"></script><!-- use dream-accordion.js for endusers -->
+        <script type="text/javascript">
+//Responsive js
+
+$(function(){
+
+    $(window).resize(function(){
+
+	var rwidth=$(this).width();
+
+     if(rwidth >959)
+
+	 {
+
+        $(document).ready(function() {
+
+        //$.noConflict();
+
+		
+		<!-- DC Dream Accordion Settings -->
+
+		$("#dream_accordion_responsive").width('960');
+       
+	    
+		<!-- DC Dream Accordion Settings -->
+
+        });
+
+     }
+
+	else if(rwidth >= 480 && rwidth <= 767)
+
+	{
+       
+	     <!-- DC Dream Accordion Settings -->
+
+		$("#dream_accordion_responsive").width('418');
+
+		<!-- DC Dream Accordion Settings -->
+         $('.slideDiv').attr('data-width','200');
+
+    }
+
+	else if(rwidth <= 479)
+
+	{
+
+		
+	   <!-- DC Dream Accordion Settings -->
+
+		$("#dream_accordion_responsive").width('298');
+        $('.slideDiv').attr('data-width','150');
+		
+	}
+
+	else if(rwidth >= 768 && rwidth <= 959)
+
+	 {
+       	
+	    <!-- DC Dream Accordion Settings -->
+
+		$("#dream_accordion_responsive").width('768');
+        $('.slideDiv').attr('data-width','330');
+		<!-- DC Dream Accordion Settings -->
+       	
+     }
+
+     })
+
+  .resize();//trigger resize on page load<br>
+
+});
+</script>
+        <!-- DC Dream Accordion Settings -->
+        <script type="text/javascript">
+			
+			// SETTINGS
+			var as_settings = {
+				/* visibleItems: less of equal to total items in acordion  */
+				visibleItems:5,
+				/* slideshowOn; true, false */
+				slideshowOn: true,
+				/* useGlobalDelay; true, false (use same timer delay for all slides, if false you NEED to set individual delays for all slides) */
+				useGlobalDelay: true,
+				/* slideshowDelay; slideshow delay, in miliseconds (2500 = 2.5 seconds) */
+				slideshowDelay: 2500,
+				/* randomPlay; true, false (play slides in normal or random order or to be more accurate, if true - mixes slide order on the beginning to simulate random) */
+				randomPlay: false,
+				/* includeVideoInSlideshow; autoplay video if exist in slide and on video finish continue with next slide (true/false) */
+				includeVideoInSlideshow: false,
+				/* openOnRollover; true, false (open slides on rollover or click) */
+				openOnRollover: true,
+				/* useScroll; true, false */
+				useScroll: true,
+				/* scrollDraggerOverColor; scroll dragger color on mouse over */
+				scrollDraggerOverColor: '#658',
+				/* useControls; true/false */
+				useControls: true,
+				/* openSlideNum; open slide on begining, enter -1 for none, 0 = first, 1 = second, 2 = third... etc. */
+				openSlideNum: 0,
+				/* transitionTime: transition time for slide in miliseconds */
+				transitionTime: 1000,
+				/* transitionEase: transition ease for slide, (some eases may possibly not work correctly), check eases here: http://gsgd.co.uk/sandbox/jquery/easing/ */
+				transitionEase: 'easeOutQuint'
+			};
+			//get window size
+				var rwidth=$(window).width();
+				if(rwidth >959) $("#dream_accordion_responsive").width('960');
+				else if(rwidth >= 480 && rwidth <= 767) $("#dream_accordion_responsive").width('420');
+				else if(rwidth <= 479)$("#dream_accordion_responsive").width('300');
+				else if(rwidth >= 768 && rwidth <= 959) $("#dream_accordion_responsive").width('768');
+			jQuery(window).load(function() {
+				//jQuery.noConflict();
+				jQuery.accordionSlider('#sliderWrapper', as_settings);
+				as_settings = null;
+				
+				//after div holder (#gmap_canvas) for google map is ready in the dom, otherwise we get an error in ie coming from google maps.
+			    //google.maps.event.addDomListener(window, 'load', initialize);
+			    initializeGmap();
+			});
+		    
+			/*
+			https://developers.google.com/maps/documentation/javascript/reference
+			google map example 
+			*/
+			
+		    var gmap;
+		    function initializeGmap() {
+				var myOptions = {
+				  zoom: 8,
+				  center: new google.maps.LatLng(48.856614, 2.3522219), // google map location to show
+				  mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				gmap = new google.maps.Map(document.getElementById('gmap_canvas'),
+					myOptions);
+		    }
+		
+        </script>
+        </head>
+
+        <body>
+        <div id="wrapper">
+          <div id="header">
+            <div class="navbar navbar-fixed-top">
+              <div class="container">
+                <div class="navbar-inner"> <a class="brand" href="index.html">taveo</a>
+                  <div class="menu"> 
+                    <script type="text/javascript" src="js/menu_html_block.js"></script> 
+                  </div>
+                </div>
+              </div>
+              <!--navbar--> 
+            </div>
+          </div>
+          <!-- #header-->
+          <div class="clr"></div>
+          <div id="content">
+            <div class="now_page">
+              <div id="sliderwrap" >
+                <div class="sliderwrap"> 
+                  
+                  <!-- DC Dream Accordion Start -->
+                  <div id="dream_accordion_responsive" style="width:100%; margin:0 auto; height: 385px;position:relative;"> <!-- define slider container width (strict enforce) -->
+                    <div id="sliderWrapper">
+                      <div class="sliderCointainer">
+                        <div class="sliderHolder"> 
+                          
+                          <!-- Slide 1 -->
+                          <div class='slideDiv' data-width='500' data-content='' data-link='http://www.google.com' data-target='_blank' data-delay='3000'> 
+                            <!-- sample local image: 
+                <!-- <img class='stack_img' src='../sliders/dream-accordion/data/images/01.jpg' width='500' height='333' alt='' /> --> 
+                            <img class='stack_img' src='http://cdn.pimg.co/p/500x333/123321/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">Dream Accordion</p>
+                            <p data-title='caption' class="50,200" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">The World's Best Accordion Slider</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(51,51,51, 0.3)" data-color="#ffffff"> <a style="text-decoration:none" href="#" target="_blank">Supports YouTube, Vimeo & HTML Content.</a></p>
+                          </div>
+                          
+                          <!-- Slide 2 -->
+                          <div class='slideDiv' data-width='500' data-content='' data-link='' data-delay='5000'>
+                            <div id="gmap_canvas"></div>
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(153,204,0, 0.6)" data-color="#ffffff">Google maps</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(153,204,0, 0.6)" data-color="#ffffff">Google Maps (try it!)</p>
+                          </div>
+                          
+                          <!-- Slide 3 -->
+                          <div class='slideDiv' data-width='500' data-content='youtube' data-link='FG0fTKAqZ5g' data-delay='3000'> <!-- data-link: add youtube video id here --> 
+                            <img class='stack_img' src='http://cdn.pimg.co/p/500x333/456321/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(204,0,0, 0.6)" data-color="#ffffff">YouTube Supported</p>
+                            <p data-title='caption' class="50,50" data-background-color="rgba(204,0,0, 0.6)" data-color="#ffffff">This is Youtube</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">Click anywhere to view the video</p>
+                          </div>
+                          
+                          <!-- Slide 4 -->
+                          <div class='slideDiv' data-width='500' data-content='vimeo' data-link='4749536' data-delay='3000'> <!-- data-link: add vimeo video id here --> 
+                            <img class='stack_img' src='http://cdn.pimg.co/p/500x333/456987/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(0,153,204, 0.6)" data-color="#ffffff">Vimeo Supported</p>
+                            <p data-title='caption' class="50,50" data-background-color="rgba(0,153,204, 0.6)" data-color="#ffffff">This is Vimeo</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">Click to play</p>
+                          </div>
+                          
+                          <!-- Slide 5 -->
+                          <div class='slideDiv' data-width='500' data-content='image' data-link='' data-target='' data-delay='3000' > <img class='stack_img' src='http://cdn.pimg.co/p/500x333/458741/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(255,102,0, 0.6)" data-color="#ffffff">100% Flexible</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">Tons of customization options</p>
+                          </div>
+                          
+                          <!-- Slide 6 -->
+                          <div class='slideDiv' data-width='500' data-content='' data-link='' data-target='' data-delay='3000'> <img class='stack_img' src='http://cdn.pimg.co/p/500x333/452178/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(94,73,188, 0.6)" data-color="#ffffff">More Slides!</p>
+                            <p data-title='caption' class="50,50" data-background-color="rgba(51,51,51, 0.6)" data-color="#ffffff">Shows more slides gradually</p>
+                          </div>
+                          
+                          <!-- Slide 7 -->
+                          <div class='slideDiv' data-width='500' data-content='' data-link='' data-target='' data-delay='3000'> <img class='stack_img' src='http://cdn.pimg.co/p/500x333/123321/fff/img.png' alt='' />
+                            <p data-title='title' class="-90,bl,10,10" data-background-color="rgba(4,4,4, 0.6)" data-color="#ffffff">Links & more!</p>
+                            <p data-title='caption' class="50,200" data-background-color="rgba(128,128,128, 0.6)" data-color="#ffffff">Supports Real Links!</p>
+                            <p data-title='caption' class="50,250" data-background-color="rgba(91,91,91, 0.6)" data-color="#ffffff"><a style="text-decoration:none" href="http://www.bing.com" target="_blank">Click me: Bing Search</a></p>
+                          </div>
+                        </div>
+                        <!-- /sliderHolder --> 
+                      </div>
+                      <!-- /sliderCointainer --> 
+                      
+                      <!-- accordion controls -->
+                      <div class="controls">
+                        <div class="controls_prev"><img src='js/dream-accordion/data/icons/controls_prev.gif' width='9' height='13' alt='controls_prev'/></div>
+                        <div class="controls_toggle"><img src='js/dream-accordion/data/icons/controls_play.gif' width='9' height='13' alt='controls_toggle'/></div>
+                        <div class="controls_next"><img src='js/dream-accordion/data/icons/controls_next.gif' width='9' height='13' alt='controls_next'/></div>
+                      </div>
+                      
+                      <!-- accordion scroll -->
+                      <div class="scroll">
+                        <div class="scrollTrack"></div>
+                        <div class="scrollBar"></div>
+                      </div>
+                      <div class="fontMeasure">a</div>
+                      
+                      <!-- preloader 
+            <div class="mediaPreloader"></div>--> 
+                      
+                    </div>
+                    <!-- /sliderWrapper --> 
+                  </div>
+                  <!-- DC Dream Accordion End -->
+                  
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="separator"> </div>
+                <h2 class="text-center">Vestibulum commodo felis quis tortor.</h2>
+                <div class="border-sep"></div>
+                <div id="gallery">
+                  <div class="content_text">
+                    <p class="span10 offset1 text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                      Nullam malesuada erat ut turpis.</p>
+                  </div>
+                  <div class="clr separator_small"></div>
+                  <div class="row"> <a class="btn btn-large color-btn center" href="portfolio-4.html">view all portfolio</a> </div>
+                  <div class="row">
+                    <div class="separator"></div>
+                    <div id="gallery-container" class="clearfix masonry span12">
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x587/456ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/456ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/125ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/125ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x379/000ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/000ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x379/111ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/111ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/555ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/555ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col1 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/777ggg/fff/img.png" alt="" />
+                          <div class="mask col1">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/777ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box col2 thumbnail">
+                        <div class="pic"> <img src="http://cdn.pimg.co/p/600x180/123ggg/fff/img.png" alt="" />
+                          <div class="mask col2">
+                            <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/123ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                              <div class="zoom-border"></div>
+                              <h4 class="text-center">Praesent placerat risus</h4>
+                              <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- gallery-container --> 
+                  </div>
+                </div>
+                <!-- gallery -->
+                <div class="separator"></div>
+              </div>
+              <!-- container --> 
+              
+            </div>
+            <!-- now_page -->
+            
+            <div class="quotes">
+              <div class="container">
+                <div id="quote-carousel" class="carousel slide"> 
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                    <div class="active item">
+                      <div class="item-inner">
+                        <div class="quote_ico img-circle center"></div>
+                        <div class="separator_small"></div>
+                        <div class="content_text">
+                          <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                        </div>
+                        <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="item-inner">
+                        <div class="quote_ico img-circle center"></div>
+                        <div class="separator_small"></div>
+                        <div class="content_text">
+                          <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                        </div>
+                        <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="item-inner">
+                        <div class="quote_ico img-circle center"></div>
+                        <div class="separator_small"></div>
+                        <div class=" content_text">
+                          <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                        </div>
+                        <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Carousel nav --> 
+                  <a class="carousel-control left" href="#quote-carousel" data-slide="prev">&nbsp;</a> <a class="carousel-control right" href="#quote-carousel" data-slide="next">&nbsp;</a> </div>
+                <!-- carousel --> 
+                
+              </div>
+              <!-- container --> 
+            </div>
+            <!-- quotes -->
+            
+            <div class="blockblog">
+              <div class="container">
+                <div class="separator_small"></div>
+                <div class="row">
+                  <div class="span12">
+                    <div class="pull-left margin">
+                      <h2>Latest From Blog</h2>
+                    </div>
+                    <div class="pull-right margin"> <a class="btn btn-large color-btn" href="blog.html">view all blog post</a> </div>
+                  </div>
+                </div>
+                <div class="border-sep"></div>
+                <ul class="thumbnails">
+                  <li class="span4">
+                    <div class="thumbnail">
+                      <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/458ggg/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/458ggg/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+                      <h3><a href="#">Ut aliquam sollicitudin leo</a></h3>
+                      <p class="comments">By Admin  |  25 Comments</p>
+                    </div>
+                  </li>
+                  <li class="span4">
+                    <div class="thumbnail">
+                      <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/159513/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/159513/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+                      <h3><a href="">Cras iaculis ultricies nulla</a></h3>
+                      <p class="comments">By Admin  |  25 Comments</p>
+                    </div>
+                  </li>
+                  <li class="span4">
+                    <div class="thumbnail">
+                      <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/357753/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/357753/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+                      <h3><a href="#">Vivamus molestie gravida turpis</a></h3>
+                      <p class="comments">By Admin  |  25 Comments</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- container --> 
+            </div>
+            <!-- blockblog -->
+            
+            <div class="clients">
+              <div class="container">
+                <div class="separator_small"></div>
+                <div class="row">
+                  <div class="span12">
+                    <div class="pull-left margin">
+                      <h2>Our Clients</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-sep"></div>
+                <ul id="client-carousel" class="jcarousel-skin-tango" >
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/dell_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/nbc_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/youtube_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/fender_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/nvidia_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/dell_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/nbc_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/youtube_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/fender_logo.png" alt="" /></a> </div>
+                  </li>
+                  <li>
+                    <div class="item"> <a href="#"><img src="images/nvidia_logo.png" alt="" /></a> </div>
+                  </li>
+                </ul>
+                <div class="clr separator"></div>
+              </div>
+              <!-- container --> 
+            </div>
+            <!-- clients --> 
+            
+          </div>
+          <!-- #content--> 
+          
+        </div>
+        <!-- #wrapper -->
+
+        <div id="footer">
+          <div class="cols">
+            <div class="container">
+              <div class="row">
+                <div class="span4">
+                  <h4>Stay Connected</h4>
+                  <div class="post"> <span>Contact us today!</span>
+                    <p> 123 Example Way<br />
+                      San Francisco, CA 94108<br />
+                      USA <br />
+                      <br />
+                      Phone: (888) 123-4567 <br />
+                      Fax: (887) 123-4567 <br />
+                      contact&#64;example.com <br />
+                    </p>
+                    <br />
+                  </div>
+                </div>
+                <div class="span4">
+                  <h4>Keep Updated</h4>
+                  <p>Subscribe to our mailing list for offers, news updates and more!</p>
+                  <form id="subscribe" name="subscribe" action="#" method="post" class="validate" target="_blank">
+                    <div class="input-append">
+                      <input type="email" id="email" name="email" placeholder="Your Email" class="subscribe-input">
+                      <button class="subscribe-button btn color-btn" type="submit">Subscribe</button>
+                    </div>
+                  </form>
+                  <div class="social">
+                    <h4>Stay Connected</h4>
+                    <a class="soc1" href="#"></a> <a class="soc2" href="#"></a> <a class="soc3" href="#"></a> <a class="soc4" href="#"></a> <a class="soc5" href="#"></a> <a class="soc6" href="#"></a> <a class="soc7" href="#"></a> <a class="soc8" href="#"></a> <a class="soc9" href="#"></a> </div>
+                  <div class="clr"></div>
+                </div>
+                <div class="span4">
+                  <h4>Latest Tweets</h4>
+                  <!-- DC Twitter Start --> 
+                  <!-- Generate your own embedded timeline: https://dev.twitter.com/docs/embedded-timelines --> 
+                  <a class="twitter-timeline" href="https://twitter.com/DevCodes" data-widget-id="346557522754293760" width="230" height="200" data-chrome="nofooter noheader transparent noscrollbar" data-theme="dark" data-link-color="#ccc">Tweets</a> 
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+                  <!-- DC Twitter End --> 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- container cols -->
+          <div class="copyright text-center">&copy; Copyright SiteName. All Rights Reserved. Design by <a href="http://www.dreamtemplate.com/" target="_blank" title="Dream Templates">dreamtemplate</a>. </div>
+        </div>
+        <!-- #footer --> 
+
+        <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script> 
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="prettyPhoto/js/jquery.prettyPhoto.js"></script> 
+        <script type="text/javascript" src="js/menusm.js"></script> 
+        <script type="text/javascript" src="js/scripts.js"></script> 
+        <script type="text/javascript" src="ui_totop/js/jquery.ui.totop.js" charset="utf-8"></script> 
+        <script type="text/javascript" src="preloader/js/jquery.preloader.js" charset="utf-8"></script> 
+        <script type="text/javascript" src="twitter_tweet/jquery.tweet.js" charset="utf-8"></script> 
+        <script type="text/javascript" src="js/gallery-masonry/jquery.masonry.min.js"></script> 
+        <script type="text/javascript" src="js/gallery-masonry/modernizr-transitions.js"></script> 
+        <script type="text/javascript" src="js/gallery-masonry/gallery-masonry.js"></script> 
+        <script type="text/javascript" src="js/tinynav.min.js"></script> 
+        <script type="text/javascript">
+	$(function () {
+		$('#nav').tinyNav({
+			active: 'selected',
+			header: 'Navigation' 
+		});
+	});
+</script>
+</body>
+</html>

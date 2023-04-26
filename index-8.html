@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>(Pro) Responsive Template</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!-- Mobile Specific Metas  ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/jcarousel_skin.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="preloader/css/preloader.css"  />
+<link rel="stylesheet" type="text/css" href="prettyPhoto/css/prettyPhoto.css" />
+<link rel="stylesheet" type="text/css" href="css/menusm.css" />
+<link type="text/css" href="ui_totop/css/ui.totop.css" rel="stylesheet" />
+<link type="text/css" href="twitter_tweet/jquery.tweet.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/layout.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<!-- DC Ken Burns Panel Slider CSS -->
+<link rel="stylesheet" type="text/css" href="sliders/kbpanel-slider/css/kenburns-panel-settings.css" media="screen" />
+
+<!-- DC Javascript Library -->
+<script type="text/javascript" src="js/jquery.easing.js"></script><!-- jQuery Easing (do not call twice on same page) -->
+
+<!-- DC Ken Burns Panel Slider JS -->
+<script type="text/javascript" src="sliders/kbpanel-slider/js/jquery.waitforimages.js"></script>
+<script type="text/javascript" src="sliders/kbpanel-slider/js/jquery.cssAnimate.mini.js"></script>
+<script type="text/javascript" src="sliders/kbpanel-slider/js/jquery.touchwipe.min.js"></script>
+<script type="text/javascript" src="sliders/kbpanel-slider/js/jquery.templateaccess.kenburns-panel.min.js"></script>
+
+<!-- DC Ken Burns Panel Slider Settings -->
+<script type="text/javascript">
+$(function() {   
+    $('.kbpanel-bannercontainer').kenburn({
+ 
+        thumbWidth:70, // thumbnail width
+        thumbHeight:40, // thumbnail height
+         
+        thumbAmount:4,  // number of thumbnails to show
+        thumbStyle:"both",   // thumb, bullet, none, both
+        thumbVideoIcon:"on", // show a video icon for video content: off, on
+         
+        thumbVertical:"bottom",
+        thumbHorizontal:"center",                          
+        thumbXOffset:0,
+        thumbYOffset:40,
+        bulletXOffset:0,
+        bulletYOffset:-16,
+        hideThumbs:"on",
+        touchenabled:'on',  // allow touch swipe (suitable for mobile devices): on, off
+        pauseOnRollOverThumbs:'off', // pause slider when mouse over thumbnail
+        pauseOnRollOverMain:'on', // pause slider when mouse over slider
+        preloadedSlides:2, // number of slides to preload during startup
+         
+        timer:5, // time before next slide (5 = 5 seconds)
+         
+        debug:"off",                       
+         
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //                                               Google Fonts !!                                             //
+        // local GoogleFont JS from your server: http://www.yourdomain.com/kb-plugin/js/jquery.googlefonts.js        //
+        // GoogleFonts from Original Source: http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js or https:... //
+        //          PT+Sans+Narrow:400,700                                                                          //
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        googleFonts:'Oswald',
+        googleFontJS:'sliders/kbpanel-slider/js/jquery.googlefonts.js'
+    });
+         
+         
+    $('.tnone').click(function() {
+        $('.tbull').removeClass('selected');
+        $('.tthumb').removeClass('selected');
+        $('.tnone').addClass('selected');
+        $('.tauto').removeClass('selected');
+        $('.kenburn_thumb_container').css({'visibility':'hidden'});
+        $('.thumbbuttons').css({'visibility':'hidden'});       
+    });
+     
+    $('.tthumb').click(function() {
+        $('.tbull').removeClass('selected');
+        $('.tauto').removeClass('selected');
+        $('.tthumb').addClass('selected');
+        $('.tnone').removeClass('selected');
+        $('.kenburn_thumb_container').css({'visibility':'visible'});
+        $('.thumbbuttons').css({'visibility':'hidden'});
+        $('body').addClass('tp_showthumbsalways');
+        $('.kenburn_thumb_container').animate({'opacity':1},{duration:300,queue:false});
+         
+    });
+     
+    $('.tauto').click(function() {
+        $('.tauto').addClass('selected');
+        $('.tthumb').removeClass('selected');
+        $('.tnone').removeClass('selected');
+        $('.tbull').removeClass('selected');
+        $('body').removeClass('tp_showthumbsalways');
+        $('.kenburn_thumb_container').css({'visibility':'visible'});
+        $('.thumbbuttons').css({'visibility':'hidden'});
+        setTimeout(function() {
+            $('.kenburn_thumb_container').animate({'opacity':0},{duration:300,queue:false});
+        },100);
+         
+    });
+     
+    $('.tbull').click(function() {
+        $('.tbull').addClass('selected');
+        $('.tauto').removeClass('selected');
+        $('.tthumb').removeClass('selected');
+        $('.tnone').removeClass('selected');
+        $('.kenburn_thumb_container').css({'visibility':'hidden'});
+        $('.thumbbuttons').css({'visibility':'visible'});       
+    });
+     
+    $('body').addClass('tp_showthumbsalways');
+    $('.tthumb').click();
+         
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-inner"> <a class="brand" href="index.html">taveo</a>
+          <div class="menu"> 
+            <script type="text/javascript" src="js/menu_html_block.js"></script> 
+          </div>
+        </div>
+      </div>
+      <!--navbar--> 
+    </div>
+  </div>
+  <!-- #header-->
+  <div class="clr"></div>
+  <div id="content">
+    <div class="now_page">
+      <div id="sliderwrap" >
+        <div class="sliderwrap"> 
+          
+          <!-- DC Ken Burns Panel slider Start -->
+          <div style=" margin:0 auto; position:relative;overflow:hidden;"> <!-- define slider container width (by strict force) -->
+            <div class="demoholder">
+              <div class="bggradient"></div>
+              <!-- <div class="kbpanel-bannercontainer centerme light"> light theme -->
+              <div class="kbpanel-bannercontainer centerme dark">
+                <ul>
+                  <!-- Slide 1 -->
+                  <li data-transition="fade" data-startalign="right,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,top" data-panduration="12" data-colortransition="4"><img alt="" src="http://cdn.pimg.co/p/890x390/123321/fff/img.png" data-bw="http://cdn.pimg.co/p/890x390/123321/fff/img.png" data-thumb="http://cdn.pimg.co/p/70x40/123321/fff/img.png">
+                    <div class="creative_layer">
+                      <div class="cp-left faderight" >
+                        <p class="cp-title">Ken Burns Panel Slider</p>
+                        <p>Supports IE, Firefox, Chrome, Safari, Opera.</p>
+                        <p>The ultimate ken burns slider is here.<br />
+                          Supports URLs, YouTube/Vimeo Videos<br />
+                          multiple transition effects, transparent<br />
+                          panels, bullets/thumbs and more! <br />
+                        </p>
+                        <a style="margin-top:10px" class="kb-button" href="#">See More</a>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 2 -->
+                  <li data-transition="slide" data-startalign="right,top" data-zoom="out" data-zoomfact="1.5" data-endAlign="left,bottom" data-panduration="8" data-colortransition="4"><img alt="" src="http://cdn.pimg.co/p/890x390/321321/fff/img.png" data-bw="http://cdn.pimg.co/p/890x390/321321/fff/img.png" data-thumb="http://cdn.pimg.co/p/70x40/321321/fff/img.png">
+                    <div class="video_kenburner">
+                      <div class="video_kenburn_wrap">
+                        <div class="video_video">
+                          <iframe class="video_clip" src="http://player.vimeo.com/video/4749536?title=0&byline=0&portrait=0"></iframe>
+                        </div>
+                        <div class="video_details">
+                          <p class="cp-title">Vimeo Video</p>
+                          <p>Watch sample embedded Vimeo video.<br />
+                          </p>
+                          <a style="margin-top:10px" class="kb-button" href="#">See More</a>
+                          <div class="clear"></div>
+                        </div>
+                        <div class="close"></div>
+                      </div>
+                    </div>
+                    <div class="creative_layer ">
+                      <div class="cp-right fade">
+                        <p class="cp-title">Vimeo Support</p>
+                        <p>This slider supports embedded content.<br />
+                          Click the play button to play a sample video.<br />
+                        </p>
+                        <a style="margin-top:10px" class="kb-button" href="#">See More</a>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 3 -->
+                  <li data-transition="slide" data-startalign="left,bottom" data-zoom="in" data-zoomfact="3" data-endAlign="center,center" data-panduration="8" data-colortransition="4"><img alt="" src="http://cdn.pimg.co/p/890x390/789987/fff/img.png" data-bw="http://cdn.pimg.co/p/890x390/789987/fff/img.png" data-thumb="http://cdn.pimg.co/p/70x40/789987/fff/img.png">
+                    <div class="creative_layer ">
+                      <div class="cp-bottom fadeup">
+                        <p class="cp-title">Did You Know?</p>
+                        <p>The Ken Burns effect is a popular name for a type of panning and zooming effect used in video production from still imagery.</p>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 4 -->
+                  <li data-transition="fade" data-startalign="right,top" data-zoom="out" data-zoomfact="1.2" data-endAlign="left,bottom" data-panduration="11" data-colortransition="4"><img alt="" src="http://cdn.pimg.co/p/890x390/600666/fff/img.png" data-bw="http://cdn.pimg.co/p/890x390/600666/fff/img.png" data-thumb="http://cdn.pimg.co/p/70x40/600666/fff/img.png">
+                    <div class="creative_layer ">
+                      <div class="cp-top fadedown" >
+                        <p class="cp-title">Your Portfolio, Revealed.</p>
+                        <p>Showcase your work and bring still images to life!</p>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 5 -->
+                  <li data-transition="fade" data-startalign="center,top" data-zoom="in" data-zoomfact="1.6" data-endAlign="center,bottom" data-panduration="12" data-colortransition="4"><img alt="" src="http://cdn.pimg.co/p/890x390/965478/fff/img.png" data-bw="http://cdn.pimg.co/p/890x390/965478/fff/img.png" data-thumb="http://cdn.pimg.co/p/70x40/965478/fff/img.png">
+                    <div class="video_kenburner">
+                      <div class="video_kenburn_wrap">
+                        <div class="video_video">
+                          <iframe class="video_clip" src="http://www.youtube.com/embed/FG0fTKAqZ5g?hd=1&wmode=opaque&autohide=1&showinfo=0"></iframe>
+                        </div>
+                        <div class="video_details">
+                          <p class="cp-title">Youtube Video</p>
+                          <p>YouTube Video</p>
+                          <p>This is a sample YouTube video.</p>
+                          <a style="margin-top:10px" class="kb-button" href="#">See More</a>
+                          <div class="clear"></div>
+                        </div>
+                        <div class="close"></div>
+                      </div>
+                    </div>
+                    <div class="creative_layer ">
+                      <div class="cp-left fade">
+                        <p class="cp-title">YouTube Support</p>
+                        <p>Click to Play!</p>
+                        <p>This innovative slider supports<br />
+                          YouTube content. Click to play!</p>
+                        <a style="margin-top:10px" class="kb-button" href="#">See More</a>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /kbpanel-bannercontainer --> 
+              <!-- Banner Shadow Effect -->
+              <div class="bannershadow centerme"><img width="100%" height="40px" src="sliders/kbpanel-slider/images/bannershadow.png"></div>
+            </div>
+            <!-- /demoholder --> 
+            
+          </div>
+          <!-- DC Ken Burns Panel slider End -->
+          
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="separator"> </div>
+        <h2 class="text-center">Vestibulum commodo felis quis tortor.</h2>
+        <div class="border-sep"></div>
+        <div id="gallery">
+          <div class="content_text">
+            <p class="span10 offset1 text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+              Nullam malesuada erat ut turpis.</p>
+          </div>
+          <div class="clr separator_small"></div>
+          <div class="row"> <a class="btn btn-large color-btn center" href="portfolio-4.html">view all portfolio</a> </div>
+          <div class="row">
+            <div class="separator"></div>
+            <div id="gallery-container" class="clearfix masonry span12">
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x587/456ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/456ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/125ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/125ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x379/000ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/000ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x379/111ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/111ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/555ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/555ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col1 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/284x180/777ggg/fff/img.png" alt="" />
+                  <div class="mask col1">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/777ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box col2 thumbnail">
+                <div class="pic"> <img src="http://cdn.pimg.co/p/600x180/123ggg/fff/img.png" alt="" />
+                  <div class="mask col2">
+                    <div class="pic_caption"> <a href="http://cdn.pimg.co/p/800x600/123ggg/fff/img.png" rel="PrettyPhoto[gallery]" class="mask-zoom img-circle"></a>
+                      <div class="zoom-border"></div>
+                      <h4 class="text-center">Praesent placerat risus</h4>
+                      <p class="text-center">Quisque consectetur pretium risus, eu suscipit ligula tempor non. Nulla facilisi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- gallery-container --> 
+          </div>
+        </div>
+        <!-- gallery -->
+        <div class="separator"></div>
+      </div>
+      <!-- container --> 
+      
+    </div>
+    <!-- now_page -->
+    
+    <div class="quotes">
+      <div class="container">
+        <div id="quote-carousel" class="carousel slide"> 
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item">
+              <div class="item-inner">
+                <div class="quote_ico img-circle center"></div>
+                <div class="separator_small"></div>
+                <div class="content_text">
+                  <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                </div>
+                <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="quote_ico img-circle center"></div>
+                <div class="separator_small"></div>
+                <div class="content_text">
+                  <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                </div>
+                <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-inner">
+                <div class="quote_ico img-circle center"></div>
+                <div class="separator_small"></div>
+                <div class=" content_text">
+                  <p class=" text-center ">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."</p>
+                </div>
+                <div class="quote-author text-center"><span>John Doe, Quote Author</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel nav --> 
+          <a class="carousel-control left" href="#quote-carousel" data-slide="prev">&nbsp;</a> <a class="carousel-control right" href="#quote-carousel" data-slide="next">&nbsp;</a> </div>
+        <!-- carousel --> 
+        
+      </div>
+      <!-- container --> 
+    </div>
+    <!-- quotes -->
+    
+    <div class="blockblog">
+      <div class="container">
+        <div class="separator_small"></div>
+        <div class="row">
+          <div class="span12">
+            <div class="pull-left margin">
+              <h2>Latest From Blog</h2>
+            </div>
+            <div class="pull-right margin"> <a class="btn btn-large color-btn" href="blog.html">view all blog post</a> </div>
+          </div>
+        </div>
+        <div class="border-sep"></div>
+        <ul class="thumbnails">
+          <li class="span4">
+            <div class="thumbnail">
+              <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/458ggg/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/458ggg/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+              <h3><a href="#">Ut aliquam sollicitudin leo</a></h3>
+              <p class="comments">By Admin  |  25 Comments</p>
+            </div>
+          </li>
+          <li class="span4">
+            <div class="thumbnail">
+              <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/159513/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/159513/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+              <h3><a href="">Cras iaculis ultricies nulla</a></h3>
+              <p class="comments">By Admin  |  25 Comments</p>
+            </div>
+          </li>
+          <li class="span4">
+            <div class="thumbnail">
+              <div class="pic"> <img  src="http://cdn.pimg.co/p/278x217/357753/fff/img.png" alt="" /> <a href="http://cdn.pimg.co/p/800x600/357753/fff/img.png" rel="PrettyPhoto[thumbnail]" class="zoom img-circle"></a> </div>
+              <h3><a href="#">Vivamus molestie gravida turpis</a></h3>
+              <p class="comments">By Admin  |  25 Comments</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- container --> 
+    </div>
+    <!-- blockblog -->
+    
+    <div class="clients">
+      <div class="container">
+        <div class="separator_small"></div>
+        <div class="row">
+          <div class="span12">
+            <div class="pull-left margin">
+              <h2>Our Clients</h2>
+            </div>
+          </div>
+        </div>
+        <div class="border-sep"></div>
+        <ul id="client-carousel" class="jcarousel-skin-tango" >
+          <li>
+            <div class="item"> <a href="#"><img src="images/dell_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/nbc_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/youtube_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/fender_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/nvidia_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/dell_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/nbc_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/youtube_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/fender_logo.png" alt="" /></a> </div>
+          </li>
+          <li>
+            <div class="item"> <a href="#"><img src="images/nvidia_logo.png" alt="" /></a> </div>
+          </li>
+        </ul>
+        <div class="clr separator"></div>
+      </div>
+      <!-- container --> 
+    </div>
+    <!-- clients --> 
+    
+  </div>
+  <!-- #content--> 
+  
+</div>
+<!-- #wrapper -->
+
+<div id="footer">
+  <div class="cols">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <h4>Stay Connected</h4>
+          <div class="post"> <span>Contact us today!</span>
+            <p> 123 Example Way<br />
+              San Francisco, CA 94108<br />
+              USA <br />
+              <br />
+              Phone: (888) 123-4567 <br />
+              Fax: (887) 123-4567 <br />
+              contact&#64;example.com <br />
+            </p>
+            <br />
+          </div>
+        </div>
+        <div class="span4">
+          <h4>Keep Updated</h4>
+          <p>Subscribe to our mailing list for offers, news updates and more!</p>
+          <form id="subscribe" name="subscribe" action="#" method="post" class="validate" target="_blank">
+            <div class="input-append">
+              <input type="email" id="email" name="email" placeholder="Your Email" class="subscribe-input">
+              <button class="subscribe-button btn color-btn" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="social">
+            <h4>Stay Connected</h4>
+            <a class="soc1" href="#"></a> <a class="soc2" href="#"></a> <a class="soc3" href="#"></a> <a class="soc4" href="#"></a> <a class="soc5" href="#"></a> <a class="soc6" href="#"></a> <a class="soc7" href="#"></a> <a class="soc8" href="#"></a> <a class="soc9" href="#"></a> </div>
+          <div class="clr"></div>
+        </div>
+        <div class="span4">
+          <h4>Latest Tweets</h4>
+          <!-- DC Twitter Start --> 
+          <!-- Generate your own embedded timeline: https://dev.twitter.com/docs/embedded-timelines --> 
+          <a class="twitter-timeline" href="https://twitter.com/DevCodes" data-widget-id="346557522754293760" width="230" height="200" data-chrome="nofooter noheader transparent noscrollbar" data-theme="dark" data-link-color="#ccc">Tweets</a> 
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+          <!-- DC Twitter End --> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container cols -->
+  <div class="copyright text-center">�&copy; Copyright SiteName. All Rights Reserved. Design by <a href="http://www.dreamtemplate.com/" target="_blank" title="Dream Templates">dreamtemplate</a>. </div>
+</div>
+<!-- #footer --> 
+
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script> 
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="prettyPhoto/js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="js/menusm.js"></script> 
+<script type="text/javascript" src="js/scripts.js"></script> 
+<script type="text/javascript" src="ui_totop/js/jquery.ui.totop.js" charset="utf-8"></script> 
+<script type="text/javascript" src="preloader/js/jquery.preloader.js" charset="utf-8"></script> 
+<script type="text/javascript" src="twitter_tweet/jquery.tweet.js" charset="utf-8"></script> 
+<script type="text/javascript" src="js/gallery-masonry/jquery.masonry.min.js"></script> 
+<script type="text/javascript" src="js/gallery-masonry/modernizr-transitions.js"></script> 
+<script type="text/javascript" src="js/gallery-masonry/gallery-masonry.js"></script> 
+<script type="text/javascript" src="js/tinynav.min.js"></script> 
+<script type="text/javascript">
+	$(function () {
+		$('#nav').tinyNav({
+			active: 'selected',
+			header: 'Navigation' 
+		});
+	});
+</script>
+</body>
+</html>
